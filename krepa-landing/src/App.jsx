@@ -5,6 +5,7 @@ import Stats from './components/sections/Stats'
 import Features from './components/sections/Features'
 import Showcase from './components/sections/Showcase'
 import Testimonials from './components/sections/Testimonials'
+import Pricing from './components/sections/Pricing'
 import Container from './components/ui/Container'
 import Reveal from './components/motion/Reveal'
 
@@ -19,10 +20,10 @@ export default function App() {
         <Features />
         <Showcase />
         <Testimonials />
+        <Pricing />
 
         {/* Placeholder sections */}
         {[
-          { id: 'pricing', label: 'Pricing' },
           { id: 'faq', label: 'FAQ' },
         ].map(({ id, label }) => (
           <section

@@ -1,6 +1,6 @@
 export default function SectionHeader({ eyebrow, heading, lead, className = '' }) {
   return (
-    <div className={className}>
+    <div className={['flex flex-col', className].join(' ')}>
       {eyebrow && (
         <p className="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-ink-500">
           {eyebrow}
