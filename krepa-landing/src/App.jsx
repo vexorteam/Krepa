@@ -1,6 +1,7 @@
 import Nav from './components/layout/Nav'
 import Footer from './components/layout/Footer'
 import Hero from './components/sections/Hero'
+import Stats from './components/sections/Stats'
 import Container from './components/ui/Container'
 import Reveal from './components/motion/Reveal'
 
@@ -11,6 +12,7 @@ export default function App() {
 
       <main>
         <Hero />
+        <Stats />
 
         {/* Placeholder sections for nav anchor testing */}
         {[
