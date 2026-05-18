@@ -1,3 +1,5 @@
+import Nav from './components/layout/Nav'
+import Footer from './components/layout/Footer'
 import Container from './components/ui/Container'
 import Button from './components/ui/Button'
 import SectionHeader from './components/ui/SectionHeader'
@@ -5,46 +7,45 @@ import Reveal from './components/motion/Reveal'
 
 export default function App() {
   return (
-    <main className="py-24 space-y-24">
+    <>
+      <Nav />
 
-      {/* Container bounds */}
-      <Container>
-        <div className="h-1 bg-ink-300 rounded" />
-        <p className="mt-2 font-sans text-xs text-ink-500">Container · max-w-container · px-6</p>
-      </Container>
-
-      {/* Buttons */}
-      <Container>
-        <p className="mb-6 font-sans text-xs font-semibold uppercase tracking-widest text-ink-500">Buttons</p>
-        <div className="flex flex-wrap gap-4">
-          <Button variant="primary">Download for iOS</Button>
-          <Button variant="ghost">Learn more</Button>
-        </div>
-      </Container>
-
-      {/* SectionHeader */}
-      <Container>
-        <Reveal>
-          <SectionHeader
-            eyebrow="Features"
-            heading="Everything you need to train smarter."
-            lead="Adaptive plans, detailed analytics, and a library of 500+ exercises — all in one place."
-          />
-        </Reveal>
-      </Container>
-
-      {/* Reveal stagger demo */}
-      <Container>
-        <p className="mb-6 font-sans text-xs font-semibold uppercase tracking-widest text-ink-500">Reveal · stagger</p>
-        <div className="space-y-4">
-          {['First line appears.', 'Second follows.', 'Third completes.'].map((text, i) => (
-            <Reveal key={text} delay={i * 0.08}>
-              <p className="font-sans text-lg text-ink-700">{text}</p>
+      <main className="pt-16">
+        {/* Placeholder content — tall enough to test nav scroll behaviour */}
+        <section className="py-40 bg-paper">
+          <Container>
+            <Reveal>
+              <SectionHeader
+                eyebrow="Step 3 · Nav + Footer"
+                heading="Navigation is live."
+                lead="Scroll down to see the nav pick up backdrop-blur. Resize to ≤ 768 px for the hamburger menu."
+              />
             </Reveal>
-          ))}
-        </div>
-      </Container>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Button variant="primary">Download for iOS</Button>
+              <Button variant="ghost">Learn more</Button>
+            </div>
+          </Container>
+        </section>
 
-    </main>
+        {/* Spacer sections to allow scroll testing */}
+        {['Features', 'Pricing', 'FAQ', 'Reviews'].map((id) => (
+          <section key={id} id={id.toLowerCase()} className="py-40 border-t border-ink-300/40">
+            <Container>
+              <Reveal>
+                <p className="font-sans text-xs font-semibold uppercase tracking-widest text-ink-500 mb-4">
+                  #{id.toLowerCase()}
+                </p>
+                <p className="font-display text-5xl text-ink-900 tracking-display">
+                  {id}
+                </p>
+              </Reveal>
+            </Container>
+          </section>
+        ))}
+      </main>
+
+      <Footer />
+    </>
   )
 }
