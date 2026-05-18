@@ -283,6 +283,7 @@ function ShowcaseBlock({ item, index }) {
 export default function Showcase() {
   return (
     <section
+      aria-label="App screenshots"
       className="bg-paper-100"
       style={{ paddingBlock: 'clamp(96px, 12vw, 192px)' }}
     >

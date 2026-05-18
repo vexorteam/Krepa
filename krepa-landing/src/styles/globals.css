@@ -18,6 +18,13 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* fixed nav is 4rem; extra 1rem breathing room */
+  }
+
+  :focus-visible {
+    outline: 2px solid #FF5A1F;
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 
   body {

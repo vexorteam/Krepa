@@ -1,13 +1,10 @@
-import { motion, useReducedMotion } from 'framer-motion'
 import { Apple, Smartphone } from 'lucide-react'
 import Container from '../ui/Container'
 import Reveal from '../motion/Reveal'
 
 export default function FinalCTA() {
-  const reduced = useReducedMotion()
-
   return (
-    <section className="relative overflow-hidden bg-ink-900">
+    <section aria-label="Download call to action" className="relative overflow-hidden bg-ink-900">
 
       {/* Decorative watermark */}
       <div

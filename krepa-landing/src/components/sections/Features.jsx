@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import Container from '../ui/Container'
 import SectionHeader from '../ui/SectionHeader'
 import Reveal from '../motion/Reveal'

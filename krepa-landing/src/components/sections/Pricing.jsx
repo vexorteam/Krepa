@@ -76,7 +76,6 @@ function PriceDisplay({ amount, billing, highlighted }) {
 }
 
 function PlanCard({ plan, billing, index }) {
-  const shouldReduceMotion = useReducedMotion()
   const price = billing === 'yearly' ? plan.yearly : plan.monthly
 
   return (
@@ -163,6 +162,7 @@ function PlanCard({ plan, billing, index }) {
         </ul>
 
         <button
+          type="button"
           className={[
             'mt-8 w-full rounded-full py-3 font-sans text-sm font-medium',
             'transition-colors duration-150',
@@ -199,7 +199,9 @@ export default function Pricing() {
               {['monthly', 'yearly'].map((option) => (
                 <button
                   key={option}
+                  type="button"
                   onClick={() => setBilling(option)}
+                  aria-pressed={billing === option}
                   className={[
                     'relative rounded-full px-5 py-2 font-sans text-sm font-medium transition-colors duration-200',
                     billing === option
