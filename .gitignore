@@ -1,0 +1,14 @@
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+# Node (after krepa-landing is created)
+krepa-landing/node_modules/
+krepa-landing/dist/
+krepa-landing/.env
+
+CLAUDE.md
+
