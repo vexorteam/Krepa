@@ -6,8 +6,7 @@ import Features from './components/sections/Features'
 import Showcase from './components/sections/Showcase'
 import Testimonials from './components/sections/Testimonials'
 import Pricing from './components/sections/Pricing'
-import Container from './components/ui/Container'
-import Reveal from './components/motion/Reveal'
+import FAQ from './components/sections/FAQ'
 
 export default function App() {
   return (
@@ -21,31 +20,7 @@ export default function App() {
         <Showcase />
         <Testimonials />
         <Pricing />
-
-        {/* Placeholder sections */}
-        {[
-          { id: 'faq', label: 'FAQ' },
-        ].map(({ id, label }) => (
-          <section
-            key={id}
-            id={id}
-            className="py-40 border-t border-ink-300/40 bg-paper"
-          >
-            <Container>
-              <Reveal>
-                <p className="font-sans text-xs font-semibold uppercase tracking-widest text-ink-500 mb-4">
-                  #{id}
-                </p>
-                <p
-                  className="font-display tracking-display text-ink-900"
-                  style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}
-                >
-                  {label}
-                </p>
-              </Reveal>
-            </Container>
-          </section>
-        ))}
+        <FAQ />
       </main>
 
       <Footer />
