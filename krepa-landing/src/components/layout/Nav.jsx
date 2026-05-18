@@ -40,11 +40,11 @@ export default function Nav() {
       ].join(' ')}
     >
       <Container>
-        <nav className="flex items-center justify-between h-16" aria-label="Main navigation">
+        <nav className="flex items-center h-16" aria-label="Main navigation">
           <KrepaLogo />
 
-          {/* Desktop links */}
-          <ul className="hidden md:flex items-center gap-8" role="list">
+          {/* Desktop links — centered in remaining space */}
+          <ul className="hidden md:flex flex-1 items-center justify-center gap-8" role="list">
             {NAV_LINKS.map(({ label, href }) => (
               <li key={label}>
                 <a
@@ -58,16 +58,9 @@ export default function Nav() {
             ))}
           </ul>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <Button variant="primary" className="!px-5 !py-2 !text-xs">
-              Download
-            </Button>
-          </div>
-
           {/* Mobile hamburger */}
           <button
-            className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg text-ink-900 hover:bg-paper-100 transition-colors duration-150"
+            className="md:hidden ml-auto flex items-center justify-center w-9 h-9 rounded-lg text-ink-900 hover:bg-paper-100 transition-colors duration-150"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
@@ -76,6 +69,13 @@ export default function Nav() {
           </button>
         </nav>
       </Container>
+
+      {/* Desktop CTA — outside Container, pinned to viewport right edge */}
+      <div className="hidden md:block absolute right-6 top-1/2 -translate-y-1/2">
+        <Button variant="primary" className="!px-5 !py-2 !text-xs">
+          Download
+        </Button>
+      </div>
 
       {/* Mobile menu */}
       <AnimatePresence>

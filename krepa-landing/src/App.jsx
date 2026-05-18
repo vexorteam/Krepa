@@ -4,6 +4,7 @@ import Hero from './components/sections/Hero'
 import Stats from './components/sections/Stats'
 import Features from './components/sections/Features'
 import Showcase from './components/sections/Showcase'
+import Testimonials from './components/sections/Testimonials'
 import Container from './components/ui/Container'
 import Reveal from './components/motion/Reveal'
 
@@ -17,12 +18,12 @@ export default function App() {
         <Stats />
         <Features />
         <Showcase />
+        <Testimonials />
 
         {/* Placeholder sections */}
         {[
           { id: 'pricing', label: 'Pricing' },
           { id: 'faq', label: 'FAQ' },
-          { id: 'reviews', label: 'Reviews' },
         ].map(({ id, label }) => (
           <section
             key={id}
